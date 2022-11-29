@@ -1,0 +1,22 @@
+@import "../../variables";
+.userAuthPage {
+  header {
+    display: flex;
+    margin-top: 20px;
+    span {
+      display: flex;
+      align-items: center;
+      margin-left: 10px;
+      color: $accent;
+      font-size: 20px;
+    }
+  }
+  h2 {
+    font-size: 35px;
+    padding: 70px 0;
+    span {
+      margin-left: 15px;
+      color: $accent;
+    }
+  }
+}
