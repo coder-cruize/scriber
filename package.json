@@ -3,17 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
-    "validator": "^13.7.0"
+    "concurrently": "^7.6.0",
+    "sass": "^1.56.1"
   },
   "scripts": {
-    "react": "react-scripts start",
-    "scss": "sass -q --no-source-map  -w .",
-    "start": "concurrently \"npm run react\" \"npm run scss\"",
-    "build": "react-scripts build",
+    "start": "concurrently \"npm run dev:react\" \"npm run dev:scss\"",
+    "dev:react": "react-scripts start",
+    "dev:scss": "sass --no-source-map  -w .",
+    "build": "npm run build:scss && npm run build:react",
+    "build:scss": "sass --no-source-map .",
+    "build:react": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "analyze": "source-map-explorer 'build/static/js/*.js'"
@@ -37,14 +39,12 @@
     ]
   },
   "devDependencies": {
-    "concurrently": "^7.6.0",
-    "eslint": "^8.28.0",
+    "eslint": "^8.30.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-react": "^7.31.11",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "sass": "^1.56.1",
     "source-map-explorer": "^2.5.3"
   }
 }
