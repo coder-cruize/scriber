@@ -1,22 +1,109 @@
 @import "../../variables";
 .userAuthPage {
-  header {
+  display: block;
+  > * {
+    height: 100%;
+  }
+  .unknown {
     display: flex;
-    margin-top: 20px;
-    span {
+    justify-content: center;
+    flex-wrap: wrap;
+    header {
       display: flex;
-      align-items: center;
-      margin-left: 10px;
-      color: $accent;
-      font-size: 20px;
+      justify-content: space-between;
+      flex-basis: 100%;
+      padding-top: 20px;
+      height: 50px;
+      .pageActions {
+        > * {
+          font-family: Poppins;
+          font-weight: 400;
+          font-size: 12px;
+          margin-left: 20px;
+        }
+      }
+    }
+    .authForm {
+      width: 100%;
+      max-width: 500px;
+      fieldset {
+        border: none;
+        font-size: 24px;
+        width: 100%;
+        text-align: center;
+        .authFormHelper {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: 20px;
+          > * {
+            font-size: 13px;
+            font-family: Poppins;
+            font-weight: 500;
+          }
+          a {
+            color: $accent;
+          }
+        }
+        .authFormSubmitBtn {
+          width: 100%;
+          padding: 10px 0;
+          margin-top: 30px;
+          border-radius: 10px;
+          background-color: $accent;
+          color: #fff;
+          font-size: 18px;
+          font-family: Poppins;
+          font-weight: 500;
+          max-width: 500px;
+          transition: 0.3s ease-in-out;
+          &:disabled {
+            background-color: $faded_grey;
+            color: #b4b4b4;
+          }
+        }
+        .authFormChangeLink {
+          text-align: center;
+          margin-top: 5px;
+          * {
+            font-size: 13px;
+            font-family: Poppins;
+            font-weight: 500;
+          }
+          span {
+            margin-right: 3px;
+          }
+          a {
+            color: $accent;
+            text-decoration: none;
+          }
+        }
+      }
     }
   }
-  h2 {
-    font-size: 35px;
-    padding: 70px 0;
-    span {
-      margin-left: 15px;
-      color: $accent;
+  .featureCarousel {
+    display: none;
+  }
+}
+@media #{$breakpoint-laptop} {
+  .userAuthPage {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .unknown {
+      width: 60%;
+      > h2 {
+        display: none;
+      }
+      .authForm {
+        margin: 0 10px;
+      }
+    }
+    .featureCarousel {
+      width: 40%;
+      margin-right: -$page_margin;
+      display: block;
+      background-color: $accent;
     }
   }
 }

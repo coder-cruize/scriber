@@ -1,0 +1,50 @@
+@import "../../variables";
+
+.customDropdown {
+  font-family: inherit;
+  font-size: inherit;
+  background-color: white;
+  font-weight: inherit;
+  &:hover {
+    ul {
+      max-height: 500px;
+      border-color: $faded_grey;
+    }
+    svg {
+      transform: rotate(-180deg);
+    }
+  }
+  span {
+    margin-right: 5px;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  svg {
+    transition: 0.2s linear;
+  }
+  ul {
+    min-width: 100%;
+    list-style-type: none;
+    margin-top: 5px;
+    max-height: 0;
+    overflow: hidden;
+    border-radius: 5px;
+    border: 1px solid;
+    border-color: transparent;
+    transition: max-height 0.3s ease-in, border-color 0.3s ease-in;
+    padding: 5px 0;
+    li {
+      padding: 5px 15px;
+      text-align: left;
+      color: $dark_grey;
+      &:hover {
+        background-color: $faded_grey;
+      }
+    }
+    .active {
+      color: $accent;
+      font-weight: bolder;
+    }
+  }
+}
