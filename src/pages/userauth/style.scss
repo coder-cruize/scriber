@@ -4,7 +4,7 @@
   > * {
     height: 100%;
   }
-  .unknown {
+  .authFormContainer {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -90,7 +90,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    .unknown {
+    .authFormContainer {
       width: 60%;
       > h2 {
         display: none;

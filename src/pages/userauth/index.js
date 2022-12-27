@@ -45,7 +45,7 @@ export default function UserAuth({ newUser }) {
   const authOptions = newUser ? pageOptions.signup : pageOptions.login;
   return (
     <main className="userAuthPage">
-      <section className="unknown">
+      <section className="authFormContainer">
         <header>
           <Logo width={30} height={30} />
           <div className="pageActions">
