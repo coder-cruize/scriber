@@ -1,4 +1,5 @@
 import { useReducer, useState } from "react";
+import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assets/icons/logo.svg";
 import Checkbox from "../../components/checkbox";
 import Dropdown from "../../components/dropdown";
@@ -13,7 +14,7 @@ const pageOptions = {
   signup: {
     title: "Signup",
     otherAuth: {
-      url: "/login",
+      url: "/auth/login",
       text: "Already have an account?",
       title: "Login"
     },
@@ -21,7 +22,11 @@ const pageOptions = {
   },
   login: {
     title: "Login",
-    otherAuth: { url: "/signup", text: "New to Scriber?", title: "Signup" },
+    otherAuth: {
+      url: "/auth/signup",
+      text: "New to Scriber?",
+      title: "Signup"
+    },
     pwdAutoComplete: "current-password"
   }
 };
@@ -49,7 +54,7 @@ export default function UserAuth({ newUser }) {
         <header>
           <Logo width={30} height={30} />
           <div className="pageActions">
-            <a href="">Guest</a>
+            <Link to="/auth/guest">Guest</Link>
             <Dropdown
               defaultIndex={0}
               options={["English", "French", "Spanish"]}
@@ -98,7 +103,9 @@ export default function UserAuth({ newUser }) {
                 disabled={loading}
                 title={"Remember me"}
               />
-              {!newUser && <a href="/password_reset">Forgot Password?</a>}
+              {!newUser && (
+                <Link to="/auth/password_reset">Forgot Password?</Link>
+              )}
             </div>
             <input
               disabled={!email.valid || !pwd.valid}
@@ -108,9 +115,9 @@ export default function UserAuth({ newUser }) {
             />
             <div className="authFormChangeLink">
               <span>{authOptions.otherAuth.text}</span>
-              <a href={authOptions.otherAuth.url}>
+              <Link to={authOptions.otherAuth.url}>
                 {authOptions.otherAuth.title}
-              </a>
+              </Link>
             </div>
           </fieldset>
         </form>
