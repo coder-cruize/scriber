@@ -31,4 +31,8 @@
     background-color: $accent;
     border-color: $accent;
   }
+  div[disabled] {
+    background-color: #ccc;
+    border-color: #ccc;
+  }
 }

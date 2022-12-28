@@ -8,7 +8,9 @@ export default function Checkbox({ value, onChange, title, disabled }) {
   };
   return (
     <button className="customCheckBox" type="button" onClick={handle}>
-      <div className={value ? "active" : null}>{value && <Check />}</div>
+      <div className={value ? "active" : null} disabled={disabled}>
+        {value && <Check />}
+      </div>
       {title && <span>{title}</span>}
     </button>
   );
