@@ -80,7 +80,6 @@ export default function UserAuth({ newUser }) {
               valid={email.valid}
               type={"email"}
               autoComplete={"email"}
-              autoFocus
               disabled={loading}
               warning={"Invalid Email Address"}
             />

@@ -9,7 +9,6 @@ export default function Input({
   value,
   onChange,
   autoComplete,
-  autoFocus,
   disabled,
   valid,
   warning,
@@ -27,7 +26,6 @@ export default function Input({
           value={value}
           autoComplete={autoComplete}
           disabled={disabled}
-          autoFocus={autoFocus}
           onChange={(e) => onChange(e.target.value)}
         />
         {pwdVisibleBtn &&
