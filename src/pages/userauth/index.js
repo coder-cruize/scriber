@@ -116,12 +116,12 @@ export default function UserAuth({ newUser }) {
                 <Link to="/auth/password_reset">Forgot Password?</Link>
               )}
             </div>
-            <input
+            <button
               disabled={!email.valid || !pwd.valid}
               type="submit"
-              className="authFormSubmitBtn"
-              value={authOptions.title}
-            />
+              className="authFormSubmitBtn">
+              {authOptions.title}
+            </button>
             <div className="authFormChangeLink">
               <span>{authOptions.otherAuth.text}</span>
               <Link to={authOptions.otherAuth.url}>
