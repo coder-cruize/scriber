@@ -24,10 +24,13 @@
     }
     .authFormSubmitBtn {
       width: 100%;
-      padding: 10px 0;
+      height: 50px;
       margin-top: 30px;
       border-radius: 10px;
       background-color: $accent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       color: #fff;
       font-size: 18px;
       font-family: Poppins;

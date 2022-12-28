@@ -42,7 +42,6 @@ export default function AuthForm({ newUser }) {
   const submit = (e) => {
     e.preventDefault();
     setLoading(true);
-    // todo: add spinner to submit button
   };
   const authOptions = newUser ? pageOptions.signup : pageOptions.login;
 
@@ -105,7 +104,27 @@ export default function AuthForm({ newUser }) {
           disabled={!email.valid || !pwd.valid || loading}
           type="submit"
           className="authFormSubmitBtn">
-          {authOptions.title}
+          {!loading ? (
+            authOptions.title
+          ) : (
+            <motion.div
+              style={{
+                width: 20,
+                height: 20,
+                borderRadius: "50%",
+                border: "3px solid #fff",
+                borderLeftColor: "transparent"
+              }}
+              animate={{
+                rotate: [0, 360]
+              }}
+              transition={{
+                duration: 2,
+                ease: "linear",
+                repeat: Infinity
+              }}
+            />
+          )}
         </button>
         <div className="authFormChangeLink">
           <span>{authOptions.otherAuth.text}</span>
@@ -117,4 +136,3 @@ export default function AuthForm({ newUser }) {
     </motion.form>
   );
 }
-// todo: disable links when loading
