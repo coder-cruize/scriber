@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useReducer, useState } from "react";
 import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assets/icons/logo.svg";
@@ -62,7 +63,15 @@ export default function UserAuth({ newUser }) {
             />
           </div>
         </header>
-        <form className="authForm" onSubmit={submit} noValidate>
+        <motion.form
+          layout
+          initial={{ opacity: 0, translateX: -200 }}
+          animate={{ opacity: 1, translateX: 0 }}
+          exit={{ opacity: 0, translateX: 200 }}
+          transition={{ duration: 0.3 }}
+          className="authForm"
+          onSubmit={submit}
+          noValidate>
           <fieldset>
             <Input
               label={"Email"}
@@ -120,7 +129,7 @@ export default function UserAuth({ newUser }) {
               </Link>
             </div>
           </fieldset>
-        </form>
+        </motion.form>
       </section>
       <FeatureCarousel />
     </main>
