@@ -1,0 +1,59 @@
+@import "../../variables";
+
+.authForm {
+  width: 100%;
+  max-width: 500px;
+  fieldset {
+    border: none;
+    font-size: 24px;
+    width: 100%;
+    text-align: center;
+    .authFormHelper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+      > * {
+        font-size: 13px;
+        font-family: Poppins;
+        font-weight: 500;
+      }
+      a {
+        color: $accent;
+      }
+    }
+    .authFormSubmitBtn {
+      width: 100%;
+      padding: 10px 0;
+      margin-top: 30px;
+      border-radius: 10px;
+      background-color: $accent;
+      color: #fff;
+      font-size: 18px;
+      font-family: Poppins;
+      font-weight: 500;
+      max-width: 500px;
+      transition: 0.3s ease-in-out;
+      &:disabled {
+        background-color: $faded_grey;
+        color: #b4b4b4;
+      }
+    }
+    .authFormChangeLink {
+      text-align: center;
+      margin-top: 5px;
+      * {
+        font-size: 13px;
+        font-family: Poppins;
+        font-weight: 500;
+      }
+      span {
+        margin-right: 3px;
+      }
+      a {
+        color: $accent;
+        text-decoration: none;
+      }
+    }
+  }
+}
