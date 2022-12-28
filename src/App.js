@@ -1,7 +1,9 @@
+import { useContext } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Unauthorized from "./pages/unauthorized";
 import UserAuth from "./pages/userauth";
+import UserData from "./services/userdata";
 
 function AuthValidator(user) {
   return function RequireAuth({ component }) {
@@ -10,7 +12,8 @@ function AuthValidator(user) {
   };
 }
 function App() {
-  const RequireAuth = AuthValidator(true);
+  const user = useContext(UserData.Context);
+  const RequireAuth = AuthValidator(user);
   return (
     <Routes>
       <Route

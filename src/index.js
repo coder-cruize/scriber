@@ -1,13 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
+import UserData from "./services/userdata";
 
 import App from "./App";
 
 function ContextProviders({ children }) {
   return (
     <React.StrictMode>
-      <BrowserRouter>{children}</BrowserRouter>
+      <UserData.Provider>
+        <BrowserRouter>{children}</BrowserRouter>
+      </UserData.Provider>
     </React.StrictMode>
   );
 }
