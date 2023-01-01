@@ -36,6 +36,7 @@ export default function AuthForm({ newUser }) {
     { value: "", valid: null }
   );
   const [check, setCheck] = useState(true);
+  const [agreeTerms, setAgreeTerms] = useState(false);
   const [loading, setLoading] = useState(false);
   const preventOnSubmit = (e) => loading && e.preventDefault();
 
@@ -47,7 +48,6 @@ export default function AuthForm({ newUser }) {
 
   return (
     <motion.form
-      layout
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -100,6 +100,19 @@ export default function AuthForm({ newUser }) {
             </Link>
           )}
         </div>
+        {newUser && (
+          <div className="authFormTerms">
+            <Checkbox
+              value={agreeTerms}
+              onChange={setAgreeTerms}
+              disabled={loading}
+              title={"I have read and agree to our"}
+            />
+            <Link onClick={preventOnSubmit} to="/tos">
+              terms of service
+            </Link>
+          </div>
+        )}
         <button
           disabled={!email.valid || !pwd.valid || loading}
           type="submit"
