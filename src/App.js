@@ -1,4 +1,4 @@
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, domAnimation, LazyMotion } from "framer-motion";
 import { useContext } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
@@ -10,7 +10,7 @@ import UserData from "./services/userdata";
 function AuthValidator(user) {
   return function RequireAuth({ component }) {
     if (!user) return <Unauthorized />;
-    return <>{component};</>;
+    return <>{component}</>;
   };
 }
 function App() {
@@ -18,18 +18,20 @@ function App() {
   const RequireAuth = AuthValidator(user);
   const location = useLocation();
   return (
-    <AnimatePresence mode="wait">
-      <Routes location={location} key={location.pathname}>
-        <Route
-          path="/"
-          element={<RequireAuth component={<div>Home Page</div>} />}
-        />
-        <Route path="/auth" element={<UserAuth />}>
-          <Route path="/auth/login" element={<AuthForm />} />
-          <Route path="/auth/signup" element={<AuthForm newUser />} />
-        </Route>
-      </Routes>
-    </AnimatePresence>
+    <LazyMotion features={domAnimation} strict>
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
+          <Route
+            path="/"
+            element={<RequireAuth component={<div>Home Page</div>} />}
+          />
+          <Route path="/auth" element={<UserAuth />}>
+            <Route path="/auth/login" element={<AuthForm />} />
+            <Route path="/auth/signup" element={<AuthForm newUser />} />
+          </Route>
+        </Routes>
+      </AnimatePresence>
+    </LazyMotion>
   );
 }
 

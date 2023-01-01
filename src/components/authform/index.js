@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m as motion } from "framer-motion";
 import { useReducer, useState } from "react";
 import { Link } from "react-router-dom";
 import validator from "../../utils/validator";
