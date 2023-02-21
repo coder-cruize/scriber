@@ -1,0 +1,28 @@
+@import "../../variables";
+.customDemo {
+  display: flex;
+  width: 40%;
+  margin-right: -$page_margin;
+  background-color: $accent;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  .card {
+    width: 400px;
+    height: 400px;
+    border-radius: 10px;
+    background-color: rgba(70, 70, 70, 0.8);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media #{$breakpoint-laptop} {
+  .customDemo {
+    display: flex;
+  }
+}

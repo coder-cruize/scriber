@@ -1,11 +1,9 @@
 import { Link, Outlet } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assets/icons/logo.svg";
+import Demo from "../../components/demo";
 import Dropdown from "../../components/dropdown";
 import "./style.css";
 
-function FeatureCarousel() {
-  return <section className="featureCarousel"></section>;
-}
 export default function UserAuth() {
   const changeLanguage = () => {};
   return (
@@ -24,7 +22,7 @@ export default function UserAuth() {
         </header>
         <Outlet />
       </section>
-      <FeatureCarousel />
+      <Demo />
     </main>
   );
 }

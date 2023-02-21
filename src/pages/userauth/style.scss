@@ -15,6 +15,8 @@
       padding-top: 20px;
       height: 50px;
       .pageActions {
+        display: flex;
+        align-items: flex-start;
         > * {
           font-family: Poppins;
           font-weight: 400;
@@ -23,9 +25,6 @@
         }
       }
     }
-  }
-  .featureCarousel {
-    display: none;
   }
 }
 @media #{$breakpoint-laptop} {
@@ -41,12 +40,6 @@
       .authForm {
         margin: 0 10px;
       }
-    }
-    .featureCarousel {
-      width: 40%;
-      margin-right: -$page_margin;
-      display: block;
-      background-color: $accent;
     }
   }
 }
