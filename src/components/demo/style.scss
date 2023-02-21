@@ -20,6 +20,16 @@
     align-items: center;
     justify-content: center;
   }
+  .deviceSupport {
+    font-family: Poppins;
+    font-weight: 500;
+    color: white;
+    margin-top: 20px;
+    span {
+      font: inherit;
+      padding: 0 5px;
+    }
+  }
 }
 @media #{$breakpoint-laptop} {
   .customDemo {
